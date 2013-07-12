@@ -7,12 +7,13 @@ basePath = '';
 files = [
   JASMINE,
   JASMINE_ADAPTER,
-  'app/bower_components/angular/angular.js',
-  'app/bower_components/angular-mocks/angular-mocks.js',
-  'app/scripts/*.js',
-  'app/scripts/**/*.js',
-  'test/mock/**/*.js',
-  'test/spec/**/*.js'
+  '../node_modules/chai/chai.js',
+  '../public/app/bower_components/angular/angular.js',
+  '../public/app/bower_components/angular-mocks/angular-mocks.js',
+  '../public/app/scripts/*.js',
+  '../public/app/scripts/**/*.js',
+  '../test/mock/**/*.js',
+  '../test/spec/**/*.js'
 ];
 
 // list of files to exclude
@@ -36,7 +37,7 @@ colors = true;
 logLevel = LOG_INFO;
 
 // enable / disable watching file and executing tests whenever any file changes
-autoWatch = false;
+autoWatch = true;
 
 // Start these browsers, currently available:
 // - Chrome
