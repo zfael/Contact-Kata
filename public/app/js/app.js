@@ -1,12 +1,12 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-angular.module('ckApp', ['ckControllers']).
-  config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+angular.module('myApp', ['myApp.controllers']).
+  config(['$routeProvider', function($routeProvider) {
     $routeProvider.
       when('/', {    
 		templateUrl: 'partials/hello',
-        controller: 'MainController'
+        controller: 'MyCtrl2'
       });
     $locationProvider.html5Mode(true);
 }]);
