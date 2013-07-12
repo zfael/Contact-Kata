@@ -19,7 +19,7 @@ exports.config = {
   jasmineNodeOpts: {
     // Spec folders are relative to the current working directly when
     // protractor is called. This can be folders or files.
-    specFolders: ['test/e2e/52473357-mobile-login-page'],
+    specFolders: ['./test/e2e/53320143-list-contacts.js'],
     isVerbose: false,
     showColors: true,
     includeStackTrace: false,
