@@ -1,0 +1,22 @@
+//Add or Edit Contact Navbar
+header(class="the_nav")
+    div.navbar
+        div.navbar-inner
+            div.container.pull-left
+                h3 Add or Edit Contact
+            div.btn-group.pull-right
+                a(type="button", class="btn btn-inverse", href="/"): i.icon-trash
+                a(type="button", class="btn btn-inverse", href="/"): i.icon-remove
+
+//Add or Edit Contact Form
+form(class="edit-field")
+    fieldset
+        label First Name:
+        input(type="text", placeholder="New First Name")
+        label Last Name:
+        input(type="text", placeholder="New Last Name")
+        label Email Address:
+        input(type="text", placeholder="New Email Address")
+        div
+            button(type="submit", class="btn btn-success btn-edit-contact") Save
+            button(type="cancel", class="btn btn-danger btn-edit-contact") Cancel

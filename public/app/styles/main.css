@@ -20,3 +20,24 @@ body {
     line-height: 1;
     letter-spacing: -1px;
 }
+
+/* buttons in edit contact view */
+.btn-edit-contact {
+    width: 100px;
+    margin: 10px;
+}
+
+/* edit view */
+.edit-field {
+    margin: 20px;
+}
+
+/* individual contacts */
+.contact-item {
+    display: inline-block;
+    margin: 10px;
+    border-width: 2px;
+    border-style: solid;
+    padding: 10px;
+    width: 30%;
+}
