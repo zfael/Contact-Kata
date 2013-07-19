@@ -4,7 +4,7 @@ exports.config = {
   // seleniumServerJar and seleniumPort will be ignored.
   seleniumAddress: 'http://localhost:4444/wd/hub',
   
-  seleniumServerJar: 'test/selenium/selenium-server-standalone-2.33.0.jar',
+  //seleniumServerJar: 'test/selenium/selenium-server-standalone-2.33.0.jar',
 
   // A base URL for your application under test. Calls to protractor.get()
   // with relative paths will be prepended with this.
@@ -23,11 +23,11 @@ exports.config = {
     isVerbose: false,
     showColors: true,
     includeStackTrace: false,
-	junitreport: {
-		report: true,
-		savePath : 'test/out/',
-		useDotNotation: true,
-		consolidate: true
-	}	
+  	junitreport: {
+  		report: true,
+  		savePath : 'test/out/',
+  		useDotNotation: true,
+  		consolidate: true
+  	}	
   }
 };
