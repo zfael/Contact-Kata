@@ -27,8 +27,8 @@ files = [
   'test/unit/client/**/*.js'
 ];
 
-autoWatch = false;
-singleRun = true;
+autoWatch = true;
+singleRun = false;
 
 browsers = ['Chrome'];
 

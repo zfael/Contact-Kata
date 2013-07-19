@@ -6,7 +6,8 @@ describe('Controller: MyCtrl2', function () {
     beforeEach(module('ckControllers'));
 
     var MainCtrl,
-        scope;
+        scope,
+        expect = chai.expect;
 
     // Initialize the controller and a mock scope
     beforeEach(inject(function ($controller, $rootScope) {
@@ -17,6 +18,6 @@ describe('Controller: MyCtrl2', function () {
     }));
 
     it('should attach a list of awesomeThings to the scope', function () {
-        expect(scope.awesomeThings.length).toBe(3);
+        expect(scope.contacts.length).to.equal(3);
     });
 });
