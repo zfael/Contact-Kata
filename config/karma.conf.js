@@ -12,7 +12,7 @@ files = [
   'node_modules/sinon/lib/sinon/stub.js',
   'node_modules/sinon-chai/lib/sinon-chai.js',
   'node_modules/underscore/underscore.js',
-  'public/app/js/lib/angular/angular.js',
+  'public/app/bower_components/angular/angular.js',
   //'content/web/public/js/lib/jquery/jquery-1.9.1.js',
   //'content/web/public/angular-ui-bootstrap/ui-bootstrap-tpls-0.2.0.js',
   //'content/web/public/js/lib/angular/angular-*.js',
