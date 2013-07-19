@@ -8,25 +8,25 @@ var mockServices = fs.readFileSync('test/mocks/mockServices.js').toString();
 
 describe('Kata-Contact', function() {
 
-    // beforeEach(function() {
-    //     //ptor.addMockModule('cai.services', mockServices);
-    // }, 100000);
+    beforeEach(function() {
+
+        ptor.get('/');
+         //ptor.addMockModule('cai.services', mockServices);
+
+     }, 100000);
 
 
     it('should display the current contacts', function() {
-        ptor = protractor.getInstance();
-        ptor.get('/');
 
-        var contactList = ptor.findElement(protractor.By.repeater('contact in contacts'));
-        contactList.getCount().then(function(count) {
-          expect(count).toEqual(5);
+        ptor.findElement(protractor.By.xpath('/html/body/div'))
+            .getAttribute('childElementCount').then(function(count) {
+                expect(count).toEqual(5);
         });
+
     }, 10000);
 
 
     it('should display Name for the first contact', function() {
-        ptor = protractor.getInstance();
-        ptor.get('/');
 
         var contact = ptor.findElement(protractor.By.id('contact_1'));
         contact.findElement(protractor.By.id('name_1')).
@@ -37,8 +37,6 @@ describe('Kata-Contact', function() {
 
     
     it('should display Email Address for the first contact', function() {
-        ptor = protractor.getInstance();
-        ptor.get('/');
 
         var contact = ptor.findElement(protractor.By.id('contact_1'));
         contact.findElement(protractor.By.id('email_1')).
