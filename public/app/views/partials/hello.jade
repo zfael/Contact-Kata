@@ -10,7 +10,7 @@ header
 div.contact-list
     ul(class="nav nav-tabs nav-stacked")
         li(id="contact_id", ng-repeat="person in contacts | orderBy:'last'")
-            a(href="/edit")
+            a(ng-click="edit(person.id)")
                 ul
                     li(id="name_id", class="contact-name") {{person.last}}, {{person.first}}
                     li(id="email_id", class="contact-email") {{person.email}}
