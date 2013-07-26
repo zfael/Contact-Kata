@@ -2,21 +2,27 @@
 header(class="the_nav")
     div.navbar
         div.navbar-inner
-            div.container.pull-left
-                h3 Add or Edit Contact
+            label.brand Add or Edit Contact
             div.btn-group.pull-right
-                a(type="button", class="btn btn-inverse", href="/"): i.icon-trash
-                a(type="button", class="btn btn-inverse", href="/"): i.icon-remove
+                a(type="button", id="btnIconDelete", class="btn", href="/"): i.icon-trash
+                a(type="button", id="btnIconCancel", class="btn", href="/"): i.icon-remove
 
 //Add or Edit Contact Form
-form(class="edit-field")
-    fieldset
-        label First Name:
-        input(type="text", placeholder="New First Name")
-        label Last Name:
-        input(type="text", placeholder="New Last Name")
-        label Email Address:
-        input(type="text", placeholder="New Email Address")
-        div
-            button(type="submit", class="btn btn-success btn-edit-contact") Save
-            button(type="cancel", class="btn btn-danger btn-edit-contact") Cancel
+div.edit-contact
+    //Labels and input fields.
+    label First Name:
+    input(id="txtFfirstname", type="text", placeholder="New First Name", ng-model="first")
+    label Last Name:
+    input(id="txtLlastname", type="text", placeholder="New Last Name", ng-model="last")
+    label Email Address:
+    input(id="txtEemailaddress", type="text", placeholder="New Email Address", ng-model="email")
+
+    //Edit button to begin editing.
+    div(ng-hide="editing")
+        button(type="edit", ng-click="editing = true", id="btnEdit", class="btn btn-info") Edit
+
+    //Cancel and Save buttons when editing.
+    div(ng-show="editing")
+        a(href="/")
+            button(type="button", id="btnSave", class="btn btn-success", ng-click="save()") Save
+        button(type="cancel", ng-click="editing = false", id="btnCancel", class="btn btn-danger") Cancel

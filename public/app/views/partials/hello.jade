@@ -2,15 +2,15 @@
 header
     div.navbar
         div.navbar-inner
-            div.container.pull-left
-                h3 Contact List
+            label.brand Contact List
             div.btn-group.pull-right(class="navbar-buttons")
-                a(type="button", class="btn btn-inverse", href="/edit"): i.icon-plus
+                a(type="button", id="btnAdd", class="btn", href="/edit"): i.icon-plus
 
 //Contact List
-p {{message}}! Contacts will fill up here when you have them.
-ul(style="list-style-type: none")
-    li(ng-repeat="person in contacts | orderBy:'last'")
-        ul
-            li(class="contact-item") {{person.last}}, {{person.first}}
-            li(class="contact-item") {{person.email}}
+div.contact-list
+    ul(class="nav nav-tabs nav-stacked")
+        li(id="contact_id", ng-repeat="person in contacts | orderBy:'last'")
+            a(ng-click="edit(person.id)")
+                ul
+                    li(id="name_id", class="contact-name") {{person.last}}, {{person.first}}
+                    li(id="email_id", class="contact-email") {{person.email}}
