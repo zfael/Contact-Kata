@@ -3,47 +3,43 @@
 /* Controllers */
 angular.module('ckControllers', [])
     .controller('MyCtrl1', ['$scope', '$rootScope', '$location', function($scope, $rootScope, $location) {
-        //Testing variables. These can be removed.
-        $scope.message = 'hi';
-
         $scope.edit = function (uid) {
             for (var i = 0, n = $rootScope.contacts.length; i < n; ++i) {
                 if ($rootScope.contacts[i].id == uid) {
-                    // get information
-                    $location.path('/edit' + i);
+                    $location.path('/edit' + $rootScope.contacts.indexOf($rootScope.contacts[i]));
                     break;
                 }
             }
         };
     }])
     .controller('MyCtrl2', ['$scope','$rootScope','$routeParams', function ($scope, $rootScope, $routeParams) {
-        var id = null;
-        $scope.first = null;
-        $scope.last = null;
-        $scope.email = null;
+        var uid = $routeParams.id || null;
+
         $scope.editing = false;
 
-        if ($routeParams.id) {
-            id = $routeParams.id;
-
-            $scope.first = $rootScope.contacts[id].first;
-            $scope.last = $rootScope.contacts[id].last;
-            $scope.email = $rootScope.contacts[id].email;
+        if (uid) {
+            $scope.first   = $rootScope.contacts[uid].first;
+            $scope.last    = $rootScope.contacts[uid].last;
+            $scope.email   = $rootScope.contacts[uid].email;
         }
 
+        $scope.delete = function () {
+            // TODO: some dialog
+            $rootScope.contacts.splice($rootScope.contacts.indexOf($rootScope.contacts[uid]), 1);
+        };
+
         $scope.save = function () {
-            if (!id) {
+            if (!uid) {
                 $rootScope.contacts.push({
                     id: $rootScope.contacts.length + 1,
                     first: $scope.first,
                     last: $scope.last,
                     email: $scope.email
                 });
-            }
-            else {
-                $rootScope.contacts[id].first = $scope.first;
-                $rootScope.contacts[id].last  = $scope.last;
-                $rootScope.contacts[id].email = $scope.email;
+            } else {
+                $rootScope.contacts[uid].first = $scope.first;
+                $rootScope.contacts[uid].last  = $scope.last;
+                $rootScope.contacts[uid].email = $scope.email;
             }
         }
     }]);
