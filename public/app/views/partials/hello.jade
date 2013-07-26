@@ -1,1 +1,16 @@
-h1 {{message}}
+//Contact List Navbar
+header
+    div.navbar
+        div.navbar-inner
+            label.brand Contact List
+            div.btn-group.pull-right(class="navbar-buttons")
+                a(type="button", id="btnAdd", class="btn", href="/edit"): i.icon-plus
+
+//Contact List
+div.contact-list
+    ul(class="nav nav-tabs nav-stacked")
+        li(id="contact_id", ng-repeat="person in contacts | orderBy:'last'")
+            a(ng-click="edit(person.id)")
+                ul
+                    li(id="name_id", class="contact-name") {{person.last}}, {{person.first}}
+                    li(id="email_id", class="contact-email") {{person.email}}
