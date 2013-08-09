@@ -32,8 +32,9 @@ singleRun = false;
 
 browsers = ['Chrome'];
 
-//reporters=['junit'];
+reporters=['junit'];
+
 junitReporter = {
-  outputFile: 'test_out/unit.xml',
+  outputFile: 'test/unit.xml',
   suite: 'unit'
 };
