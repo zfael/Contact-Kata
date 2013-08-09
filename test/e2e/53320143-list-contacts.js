@@ -18,6 +18,11 @@ describe('Contact-Kata', function() {
 
     it('should display the current contacts', function() {
 
+        ptor.findElement(protractor.By.className('navbar-inner'))
+            .getText().then(function(text) {
+                expect(text).toEqual('Contact List');
+            })
+
         ptor.findElement(protractor.By.className('nav-stacked'))
             .getAttribute('childElementCount').then(function(count) {
                 expect(count).toEqual('3');
