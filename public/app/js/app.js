@@ -1,7 +1,7 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-angular.module('ckApp', ['ckControllers']).
+angular.module('ckApp', ['ckControllers', 'ckServices']).
   config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider.
       when('/', {    
@@ -18,8 +18,8 @@ angular.module('ckApp', ['ckControllers']).
 }])
     .run(function ($rootScope) {
         $rootScope.contacts = [
-            {id: 0, first: 'John', last: 'Doe', email: 'jdoe@email.com'},
-            {id: 1, first: 'Nancy', last: 'Coolperson', email: 'ncoolperson@email.com'},
-            {id: 2, first: 'Michael', last: 'Bluth', email: 'mbluth@email.com'}
+            {id: 1, first: 'John', last: 'Doe', email: 'jdoe@email.com'},
+            {id: 2, first: 'Nancy', last: 'Coolperson', email: 'ncoolperson@email.com'},
+            {id: 3, first: 'Michael', last: 'Bluth', email: 'mbluth@email.com'}
         ];
     });

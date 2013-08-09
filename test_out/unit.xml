@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<testsuites>
+  <testsuite name="Chrome 28.0 (Windows)" package="unit" timestamp="2013-08-09T20:33:22" id="0" hostname="oh-jsantiago-d01" tests="22" errors="0" failures="0" time="0.001">
+    <properties>
+      <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.95 Safari/537.36"/>
+    </properties>
+    <testcase name="should exist" time="0" classname="unit Chrome 28.0 (Windows).service ContactService"/>
+    <testcase name="should have a method to get all contacts" time="0" classname="unit Chrome 28.0 (Windows).service ContactService"/>
+    <testcase name="should return a list of contacts" time="0" classname="unit Chrome 28.0 (Windows).service ContactService"/>
+    <testcase name="should have a method to add contacts" time="0" classname="unit Chrome 28.0 (Windows).service ContactService"/>
+    <testcase name="should have a method to get all contacts" time="0" classname="unit Chrome 28.0 (Windows).service ContactService"/>
+    <testcase name="should add a contact to the list of contacts" time="0" classname="unit Chrome 28.0 (Windows).service ContactService"/>
+    <testcase name="should add a second contact from the list of contacts" time="0" classname="unit Chrome 28.0 (Windows).service ContactService"/>
+    <testcase name="should have a method to get one contact" time="0" classname="unit Chrome 28.0 (Windows).service ContactService"/>
+    <testcase name="should get a contact from the list of contacts" time="0" classname="unit Chrome 28.0 (Windows).service ContactService"/>
+    <testcase name="should get a second contact from the list of contacts" time="0" classname="unit Chrome 28.0 (Windows).service ContactService"/>
+    <testcase name="should have a method to save a contact" time="0" classname="unit Chrome 28.0 (Windows).service ContactService"/>
+    <testcase name="should update a contact in the list of contacts" time="0" classname="unit Chrome 28.0 (Windows).service ContactService"/>
+    <testcase name="should update a second contact in the list of contacts" time="0" classname="unit Chrome 28.0 (Windows).service ContactService"/>
+    <testcase name="should have a method to delete a contact" time="0" classname="unit Chrome 28.0 (Windows).service ContactService"/>
+    <testcase name="should delete a contact in the list of contacts" time="0.001" classname="unit Chrome 28.0 (Windows).service ContactService"/>
+    <testcase name="should delete a contact in the list of contacts" time="0" classname="unit Chrome 28.0 (Windows).service ContactService"/>
+    <testcase name="should attach a list of awesomeThings to the scope" time="0" classname="unit Chrome 28.0 (Windows).Controller: MyCtrl2"/>
+    <testcase name="should have an edit method" time="0" classname="unit Chrome 28.0 (Windows).Controller: MyCtrl2"/>
+    <testcase name="add conatct" time="0" classname="unit Chrome 28.0 (Windows).Controller: MyCtrl2"/>
+    <testcase name="should have an del method" time="0" classname="unit Chrome 28.0 (Windows).Controller: MyCtrl2"/>
+    <testcase name="should remove one" time="0" classname="unit Chrome 28.0 (Windows).Controller: MyCtrl2"/>
+    <testcase name="should edit an exiting contact" time="0" classname="unit Chrome 28.0 (Windows).Controller: MyCtrl2"/>
+    <system-out><![CDATA[
+]]></system-out>
+    <system-err/>
+  </testsuite>
+</testsuites>

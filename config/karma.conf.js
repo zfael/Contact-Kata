@@ -19,7 +19,7 @@ files = [
   'test/lib/angular/angular-mocks.js',
   //'content/web/public/js/lib/*.js',
   'public/app/js/app.js',
-  //'public/app/js/services/*.js',
+  'public/app/js/services/*.js',
   //'public/app/js/filters/*.js',
   //'public/app/js/directives/*.js',
   'public/app/js/controllers/*.js',
@@ -32,7 +32,7 @@ singleRun = false;
 
 browsers = ['Chrome'];
 
-//reporters=['junit'];
+reporters=['junit'];
 junitReporter = {
   outputFile: 'test_out/unit.xml',
   suite: 'unit'
