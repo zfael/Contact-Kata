@@ -11,23 +11,19 @@ describe('Contact-Kata', function() {
     beforeEach(function() {
 
         ptor.get('http://localhost:3000');
-        //ptor.waitForAngular();
+        ptor.waitForAngular();
 
      }, 10000);
 
 
-    it('should display a greeting', function() {
-
-        ptor.findElement(protractor.By.xpath('/html/body/div/p'))
-            .getText().then(function(text) {
-                expect(text).toEqual('hi! Contacts will fill up here when you have them.');
-            });
-    }, timeout);
-
-
     it('should display the current contacts', function() {
 
-        ptor.findElement(protractor.By.xpath('/html/body/div/ul'))
+        ptor.findElement(protractor.By.className('navbar-inner'))
+            .getText().then(function(text) {
+                expect(text).toEqual('Contact List');
+            })
+
+        ptor.findElement(protractor.By.className('nav-stacked'))
             .getAttribute('childElementCount').then(function(count) {
                 expect(count).toEqual('3');
         });
@@ -36,54 +32,25 @@ describe('Contact-Kata', function() {
 
 
     it('should display Name, Contact informaiton the first contact', function() {
-        
-        //The following produces an error as documented to be caused by css selectors in markup
-        //InvalidElementStateError: invalid element state: SyntaxError: DOM Exception 12
-        // ptor.findElement(protractor.By.repeater('person in contacts').row(1))
-        //     .findElement(protractor.By.css('li:nth-child[1]'))
-        //         .getText().then(function(text) {
-        //             expect(text).toEqual('Bluth, Mike');
-        //         });
 
-        ptor.findElement(protractor.By.xpath('/html/body/div/ul/li[1]/ul/li[1]'))
-            .getText().then(function(text) {
-                expect(text).toEqual('Bluth, Michael');
-            });
-
-        ptor.findElement(protractor.By.xpath('/html/body/div/ul/li[1]/ul/li[2]'))
-            .getText().then(function(text) {
-                expect(text).toEqual('mbluth@email.com');
-            });
+        var contact = ptor.findElement(protractor.By.repeater("person in contacts | orderBy:'last'").row(1));
+        verifyContact(contact, 'Bluth, Michael', 'mbluth@email.com')
 
     }, timeout);
 
-    
-    it('should display Name, Contact informaiton the second contact', function() {
-        
-        ptor.findElement(protractor.By.xpath('/html/body/div/ul/li[2]/ul/li[1]'))
-            .getText().then(function(text) {
-                expect(text).toEqual('Coolperson, Nancy');
-            });
 
-        ptor.findElement(protractor.By.xpath('/html/body/div/ul/li[2]/ul/li[2]'))
-            .getText().then(function(text) {
-                expect(text).toEqual('ncoolperson@email.com');
-            });
+    it('should display Name, Contact informaiton the second contact', function() {
+
+        var contact = ptor.findElement(protractor.By.repeater("person in contacts | orderBy:'last'").row(2));
+        verifyContact(contact, 'Coolperson, Nancy', 'ncoolperson@email.com')
 
     }, timeout);
 
 
     it('should display Name, Contact informaiton the third contact', function() {
-        
-        ptor.findElement(protractor.By.xpath('/html/body/div/ul/li[3]/ul/li[1]'))
-            .getText().then(function(text) {
-                expect(text).toEqual('Doe, John');
-            });
 
-        ptor.findElement(protractor.By.xpath('/html/body/div/ul/li[3]/ul/li[2]'))
-            .getText().then(function(text) {
-                expect(text).toEqual('jdoe@email.com');
-            });
+        var contact = ptor.findElement(protractor.By.repeater("person in contacts | orderBy:'last'").row(3));
+        verifyContact(contact, 'Doe, John', 'jdoe@email.com')
 
     }, timeout);
 
@@ -98,3 +65,16 @@ describe('Contact-Kata', function() {
     }, timeout);
 
 });
+
+function verifyContact(contact, name, email) {
+
+    contact.findElement(protractor.By.id('name_id'))
+        .getText().then(function(text) {
+            expect(text).toEqual(name);
+        });
+
+    contact.findElement(protractor.By.id('email_id'))
+        .getText().then(function(text) {
+            expect(text).toEqual(email);
+        });
+}
