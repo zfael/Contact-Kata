@@ -17,13 +17,14 @@ exports.config = {
     'browserName': 'chrome'
   },  
 
-  specs: ['./test/e2e/53320143-list-contacts.js'],
+  
   // Options to be passed to Jasmine-node.
   
   jasmineNodeOpts: {
     // Spec folders are relative to the current working directly when
     // protractor is called. This can be folders or files.
-    isVerbose: false,
+    specFolders: ['./test/e2e/53320143-list-contacts.js'],
+    isVerbose: true,
     showColors: true,
     includeStackTrace: false,
   	junitreport: {
