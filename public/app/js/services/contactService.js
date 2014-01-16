@@ -3,16 +3,6 @@
 servicesModule.factory('ContactService', function(storageService) {
     var lastContactId = 0;
 
-//    var getLastContactId = function() {
-//        var last = 0;
-//        for(var i = 0; i < this.contacts.length; i++) {
-//            if (this.contacts[i].id > last) {
-//                last = this.contacts[i].id;
-//            }
-//        }
-//        return last;
-//    };
-
     return {
       contacts: [],
 
