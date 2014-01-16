@@ -5,7 +5,7 @@ angular.module('ckApp', ['ckControllers', 'ckServices']).
   config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider.
       when('/', {    
-		templateUrl: 'partials/hello',
+		templateUrl: 'partials/list',
         controller: 'MyCtrl1'
       })
 
