@@ -11,18 +11,15 @@ header(class="the_nav")
 div.edit-contact
     //Labels and input fields.
     label First Name:
-    input(id="txtFfirstname", type="text", placeholder="New First Name", ng-model="first")
+    input(id="txtFfirstname", type="text", placeholder="New First Name", ng-model="contact.first")
     label Last Name:
-    input(id="txtLlastname", type="text", placeholder="New Last Name", ng-model="last")
+    input(id="txtLlastname", type="text", placeholder="New Last Name", ng-model="contact.last")
     label Email Address:
-    input(id="txtEemailaddress", type="text", placeholder="New Email Address", ng-model="email")
-
-    //Edit button to begin editing.
-    div(ng-hide="editing")
-        button(type="edit", ng-click="editing = true", id="btnEdit", class="btn btn-info") Edit
+    input(id="txtEemailaddress", type="text", placeholder="New Email Address", ng-model="contact.email")
 
     //Cancel and Save buttons when editing.
-    div(ng-show="editing")
+    div
         a(href="/")
             button(type="button", id="btnSave", class="btn btn-success", ng-click="save()") Save
-        button(type="cancel", ng-click="editing = false", id="btnCancel", class="btn btn-danger") Cancel
+        a(href="/")
+            button(type="cancel", id="btnCancel", class="btn btn-danger") Cancel

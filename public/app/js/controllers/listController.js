@@ -1,11 +1,14 @@
 'use strict';
 
 /* Controllers */
-controllersModule.controller('ListController', ['$scope', '$rootScope', '$location', function($scope, $rootScope, $location) {
-        $scope.edit = function (uid) {
-            for (var i = 0, n = $rootScope.contacts.length; i < n; ++i) {
-                if ($rootScope.contacts[i].id == uid) {
-                    $location.path('/edit' + $rootScope.contacts.indexOf($rootScope.contacts[i]));
+controllersModule.controller('ListController', ['$scope', '$rootScope', '$location', 'ContactService', function($scope, $rootScope, $location, ContactService) {
+
+        $scope.contacts = ContactService.contacts;
+
+        $scope.edit = function (id) {
+            for (var i = 0, n = $scope.contacts.length; i < n; ++i) {
+                if (ContactService.contacts[i].id == id) {
+                    $location.path('/edit' + ContactService.contacts.indexOf(ContactService.contacts[i]));
                     break;
                 }
             }
