@@ -1,7 +1,7 @@
 'use strict';
 
 var controllersModule = angular.module('ckControllers', []);
-
+var servicesModule = angular.module('ckServices', []);
 
 // Declare app level module which depends on filters, and services
 angular.module('ckApp', ['ckControllers', 'ckServices']).
@@ -21,10 +21,4 @@ angular.module('ckApp', ['ckControllers', 'ckServices']).
 }])
     .run(function ($rootScope, ContactService) {
         ContactService.retrieveAll();
-
-//        $rootScope.contacts = [
-//            {id: 1, first: 'John', last: 'Doe', email: 'jdoe@email.com'},
-//            {id: 2, first: 'Nancy', last: 'Coolperson', email: 'ncoolperson@email.com'},
-//            {id: 3, first: 'Michael', last: 'Bluth', email: 'mbluth@email.com'}
-//        ];
     });

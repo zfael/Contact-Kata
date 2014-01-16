@@ -1,7 +1,6 @@
 'use strict';
 
-angular.module('ckServices', []).
-  factory('ContactService', function() {
+servicesModule.factory('ContactService', function(storageService) {
     var lastContactId = 0;
 
 //    var getLastContactId = function() {
@@ -18,10 +17,12 @@ angular.module('ckServices', []).
       contacts: [],
 
       retrieveAll: function() {
-            this.contacts  = [
-            {id: 10, first: 'John', last: 'Doe', email: 'jdoe@email.com'},
-            {id: 20, first: 'Nancy', last: 'Coolperson', email: 'ncoolperson@email.com'},
-            {id: 99, first: 'Michael', last: 'Bluth', email: 'mbluth@email.com'}];
+            this.contacts  = storageService.getContacts() || [];
+//           Example:
+//           [
+//            {id: 10, first: 'John', last: 'Doe', email: 'jdoe@email.com'},
+//            {id: 20, first: 'Nancy', last: 'Coolperson', email: 'ncoolperson@email.com'},
+//            {id: 99, first: 'Michael', last: 'Bluth', email: 'mbluth@email.com'}];
 
             lastContactId = 0;
 
@@ -30,6 +31,10 @@ angular.module('ckServices', []).
                    lastContactId = this.contacts[i].id;
                 }
             }
+      },
+
+      storeAll: function() {
+          storageService.setContacts(this.contacts);
       },
 
       getAll: function() {
@@ -51,6 +56,8 @@ angular.module('ckServices', []).
         contact.id = lastContactId;
 
         this.contacts.push(contact);
+
+        this.storeAll();
       },
 
       save: function(contact) {
@@ -59,6 +66,7 @@ angular.module('ckServices', []).
             this.contacts[i] = contact;
           }
         }
+        this.storeAll();
       },
 
       delete: function(id) {
@@ -74,6 +82,8 @@ angular.module('ckServices', []).
         if (index != null) {
           this.contacts.splice(index,1);
         }
+        this.storeAll();
+
       }
     }
   });
