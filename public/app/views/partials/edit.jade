@@ -1,0 +1,12 @@
+script#edit(type='text/ng-template')
+    form
+      .form-group
+        label Name
+        input.form-control(type='text', placeholder='Name', ng-model="data.name")
+      .form-group
+        label Address
+        input.form-control(type='address', placeholder='Address', ng-model="data.address")
+      .form-group
+        label Phone number
+        input.form-control(type='phone', placeholder='Phone Number', ng-model="data.phone")      
+      button.btn.btn-default(type='submit', ng-click="save()") Save

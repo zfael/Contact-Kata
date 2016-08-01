@@ -26,7 +26,7 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index);
-app.get('/partials/:name', function (req, res) {
+app.get('/:name', function (req, res) {  
 	var name = req.params.name;
     res.render('partials/' + name, {title: 'Contact-Kata'});
 });

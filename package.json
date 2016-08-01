@@ -10,8 +10,10 @@
     "jade": "~0.33.0"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.3.0",
     "karma": "~0.8.6",
-    "protractor": "~0.5.0",
+    "protractor": "~0.5.0"
   },
   "engines": {
     "node": ">=0.8.0"
